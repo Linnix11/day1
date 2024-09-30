@@ -29,8 +29,8 @@ if (typeof input_var === 'string') {
 }
 
 
-displayThisText(`La valeur de la variable est '${input_var}'`);
-displayThisText(`Son type est '${type}'`);
+displayThisText("La valeur de la variable est " + input_var);
+displayThisText("Son type est " + type);
 
 
 if (input_var === "42") {
