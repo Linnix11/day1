@@ -1,30 +1,40 @@
 function calculateSandwiches() {
+        let hamSandwichCount = 0;
+        let tunaSandwichCount = 0;
+        let vegetarianSandwichCount = 0;
 
-    let breadCount = Math.floor(Math.random() * 6) + 10; 
-    let hamCount = Math.floor(Math.random() * 4) + 2;    
-    let tunaCount = Math.floor(Math.random() * 2) + 1;   
-    let saladCount = Math.floor(Math.random() * 7);       
-    let tomatoCount = Math.floor(Math.random() * 2) + 1;  
 
-    const hamSandwiches = Math.min(Math.floor(breadCount / 2), hamCount); 
-    const tunaSandwiches = Math.min(Math.floor(breadCount / 2), tunaCount, Math.floor(saladCount / 2)); 
-    const vegetarianSandwiches = Math.min(Math.floor(breadCount / 2), saladCount, Math.floor(tomatoCount / 2)); 
+        while (breadCount >= 2 && hamCount >= 1) {
+            hamSandwichCount++;
+            breadCount -= 2;
+            hamCount -= 1;
+        }
 
+
+        while (breadCount >= 2 && tunaCount >= 1 && saladCount >= 2) {
+            tunaSandwichCount++;
+            breadCount -= 2;
+            tunaCount -= 1;
+            saladCount -= 2;
+        }
+
+
+        while (breadCount >= 2 && saladCount >= 1 && tomatoCount >= 2) {
+            vegetarianSandwichCount++;
+            breadCount -= 2;
+            saladCount -= 1;
+            tomatoCount -= 2;
+        }
+
+
+        outDiv.append(`<p>Nombre de sandwichs au jambon : ${hamSandwichCount}</p>`);
+        outDiv.append(`<p>Nombre de sandwichs au thon : ${tunaSandwichCount}</p>`);
+        outDiv.append(`<p>Nombre de sandwichs végétariens : ${vegetarianSandwichCount}</p>`);
+
+
+        displayIngredients();
+    }
  
-    document.write("<br/>number of ham sandwiches :" , hamSandwiches);
-    document.write("<br/>number of tuna sandwiches :", tunaSandwiches);
-    document.write("<br/>number of vegetarian sandwiches :", vegetarianSandwiches);
+ console.log ("C GOOD")
 
-    
-    breadCount -= (hamSandwiches + tunaSandwiches + vegetarianSandwiches) * 2;
-    hamCount -= hamSandwiches;
-    tunaCount -= tunaSandwiches;
-    saladCount -= (tunaSandwiches + vegetarianSandwiches);
-    tomatoCount -= vegetarianSandwiches;
-
-
-	console.log("C GOOOOOOD")
-}
-
-
-calculateSandwiches();
+    calculateSandwiches();
