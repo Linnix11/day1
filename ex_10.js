@@ -27,9 +27,9 @@ function calculateSandwiches() {
         }
 
 
-        displayThisText(`<p>number of ham sandwiches : ${hamSandwichCount}</p>`);
-        displayThisText(`<p>number of tuna sandwiches : ${tunaSandwichCount}</p>`);
-        displayThisText(`<p>number of vegetarian sandwiches : ${vegetarianSandwichCount}</p>`);
+        displayThisText("number of ham sandwiches :" + hamSandwichCount);
+        displayThisText("number of tuna sandwiches :" + tunaSandwichCount);
+        displayThisText("number of vegetarian sandwiches :" + vegetarianSandwichCount);
 
 
         displayIngredients();
